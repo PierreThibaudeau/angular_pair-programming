@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './list/article/article.component';
 import { ListComponent } from './list/list.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 import { ArticlesService } from './services/articles.service';
 
@@ -12,7 +13,8 @@ import { ArticlesService } from './services/articles.service';
   declarations: [
     AppComponent,
     ArticleComponent,
-    ListComponent
+    ListComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule

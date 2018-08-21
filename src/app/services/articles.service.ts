@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ArticlesService {
     getArticles() {
-        console.log('getArticles called!');
         return [
             {
                 title: 'Faune',
-                content: 'OUI',
+                content: 'OUI OUI OUI OUI',
                 comment: [
                     'coucou',
                     'coucou2',
