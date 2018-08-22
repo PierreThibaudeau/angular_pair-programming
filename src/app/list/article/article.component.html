@@ -1,8 +1,0 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">n°{{index+1}} - {{ article.title }}</h5>
-    <p class="card-text">{{ article.content | truncatePipe:30 }}</p>
-    <p class="card-text" *ngIf="article.comment.length">{{ article.comment.length }}</p>
-    <a href="#" class="btn btn-primary">Détail</a>
-  </div>
-</div>

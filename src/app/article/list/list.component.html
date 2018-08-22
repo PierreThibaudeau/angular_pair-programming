@@ -1,0 +1,10 @@
+<div class="row">
+    <app-article class="col-sm-6"
+                 *ngFor="let article of articles"
+                  [article]="article"
+                  [page]="page"
+    >
+    </app-article>
+</div>
+
+<a [routerLink]="['/articles/create']" class="btn btn-primary">Créer un article</a>

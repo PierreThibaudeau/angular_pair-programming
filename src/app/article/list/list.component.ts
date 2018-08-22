@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesService } from '../services/articles.service';
+import { ArticlesService } from '../../services/articles.service';
 
 @Component({
     selector: 'app-list',
@@ -8,11 +8,15 @@ import { ArticlesService } from '../services/articles.service';
 
 export class ListComponent implements OnInit {
     public articles;
+    public page = 'list';
 
     constructor(private articlesService: ArticlesService) {
     }
 
-    ngOnInit(){
-        this.articles = this.articlesService.getArticles();
+    ngOnInit() {
+        this.articlesService.getAll().subscribe((articlesFromServer) => {
+            this.articles =  articlesFromServer;
+        });
     }
+
 }
