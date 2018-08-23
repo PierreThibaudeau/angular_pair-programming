@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { CategoriesService } from '../services/categories.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -10,15 +8,4 @@ import { Router } from '@angular/router';
 
 export class CategoryComponent {
   @Input() category;
-
-  constructor(
-      private categoriesService: CategoriesService,
-      private router: Router,
-  ) {}
-
-  deleteCategory(id) {
-    this.categoriesService.remove(id).subscribe((deletedCategory) => {
-      this.router.navigate(['/categories']);
-    });
-  }
 }

@@ -9,7 +9,6 @@ import { ArticlesService } from '../../services/articles.service';
 
 export class ArticleListComponent implements OnInit {
     public articles;
-    public page = 'list';
 
     constructor(private articlesService: ArticlesService) {
     }

@@ -14,6 +14,7 @@ import { ArticleListComponent } from './article/list/list.component';
 import { ArticleDetailComponent } from './article/detail/detail.component';
 import { ArticleUpdateComponent } from './article/admin/update.component';
 import { ArticleCreateComponent } from './article/admin/create.component';
+import { ArticleDeleteComponent } from './article/admin/delete.component';
 
 // Categories
 import { CategoryComponent } from './category/category.component';
@@ -21,6 +22,7 @@ import { CategoryListComponent } from './category/list/list.component';
 import { CategoryDetailComponent } from './category/detail/detail.component';
 import { CategoryUpdateComponent } from './category/admin/update.component';
 import { CategoryCreateComponent } from './category/admin/create.component';
+import { CategoryDeleteComponent } from './category/admin/delete.component';
 
 // Pipes
 import { TruncatePipe } from './pipes/truncate.pipe';
@@ -45,11 +47,13 @@ const apiUrl: string = environment.apiUrl;
     ArticleListComponent,
     ArticleUpdateComponent,
     ArticleCreateComponent,
+    ArticleDeleteComponent,
     CategoryComponent,
     CategoryDetailComponent,
     CategoryListComponent,
     CategoryUpdateComponent,
     CategoryCreateComponent,
+    CategoryDeleteComponent,
     TruncatePipe,
   ],
   imports: [

@@ -3,7 +3,7 @@
 
   <div class="category-full--links-wrapper">
     <a [routerLink]="['/categories', category.id, 'update']" class="btn btn-secondary">Modifier</a>
-    <a (click)="deleteCategory(category.id)" class="btn btn-danger">Supprimer</a>
+    <app-delete-category class="btn btn-danger" [id_category]="category.id"></app-delete-category>
     <a routerLink="/categories" class="btn btn-dark">Retour à la liste des Catégories</a>
   </div>
 </div>
