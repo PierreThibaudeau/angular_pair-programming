@@ -1,6 +1,25 @@
-<app-article
-  [article]="article"
-  [page]="page"
->
+<div class="article-full--container">
+    <h1 class="article-full--title">n°{{article.id}} - {{ article.title }}</h1>
+    <p class="article-full--content">{{ article.content }}</p>
 
-</app-article>
+    <div class="article-full--links-wrapper">
+        <a [routerLink]="['/articles', article.id, 'update']" class="btn btn-secondary">Modifier</a>
+        <a (click)="deleteArticle(article.id)" class="btn btn-danger">Supprimer</a>
+        <a routerLink="/articles" class="btn btn-dark">Retour à la liste des articles</a>
+    </div>
+
+    <div class="article-full--comments-container">
+        <h2 class="article-full--comments-title">Commentaires</h2>
+        <div class="article-full--comment-wrapper" *ngFor="let comment of article.comments">
+            <span class="article-full--comment-user">{{comment.username}}</span>
+            <p class="article-full--comment-content">{{comment.content}}</p>
+        </div>
+    </div>
+</div>
+
+<!--<app-article-->
+  <!--[article]="article"-->
+  <!--[page]="page"-->
+<!--&gt;-->
+
+<!--</app-article>-->

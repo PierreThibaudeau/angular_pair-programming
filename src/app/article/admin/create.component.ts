@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-create',
     templateUrl: './articleForm.component.html',
+    styleUrls: ['../../app.component.css']
 })
 
 export class CreateComponent {

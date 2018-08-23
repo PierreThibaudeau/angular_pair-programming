@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
     selector: 'app-update',
     templateUrl: './articleForm.component.html',
+    styleUrls: ['../../app.component.css']
 })
 
 export class UpdateComponent implements OnInit {
