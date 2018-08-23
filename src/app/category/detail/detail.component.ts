@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesService } from '../../services/articles.service';
+import { CategoriesService } from '../../services/categories.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'app-detail-article',
+    selector: 'app-detail-category',
     templateUrl: './detail.component.html',
 })
 
-export class ArticleDetailComponent implements OnInit {
-    public article = {};
+export class CategoryDetailComponent implements OnInit {
+    public category = {};
     public page = 'detail';
 
     constructor(
-        private articlesService: ArticlesService,
+        private categoriesService: CategoriesService,
         private route: ActivatedRoute,
     ) {}
 
     ngOnInit() {
         const snapshot = this.route.snapshot;
         const id = snapshot.params.id;
-        this.articlesService.getById(id).subscribe((articleFromServer) => {
-            this.article =  articleFromServer;
+        this.categoriesService.getById(id).subscribe((categoryFromServer) => {
+            this.category =  categoryFromServer;
         });
     }
 }

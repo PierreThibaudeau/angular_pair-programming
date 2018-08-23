@@ -1,32 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { Injectable, Injector } from '@angular/core';
+import { Service } from './service.service';
 
 @Injectable()
-export class CategoriesService {
-    private apiUrl = 'http://localhost:8080/rest';
+export class CategoriesService extends Service {
 
-    constructor(
-        private http: HttpClient,
-    ) {}
-
-    getAll() {
-        return this.http.get(`${this.apiUrl}/categories`);
-    }
-
-    getById(id) {
-        return this.http.get(`${this.apiUrl}/categories/${id}`);
-    }
-
-    update(category) {
-        return this.http.put(`${this.apiUrl}/categories/${category.id}`, category);
-    }
-
-    create(category) {
-        return this.http.post(`${this.apiUrl}/categories/`, category);
-    }
-
-    remove(id) {
-        return this.http.delete(`${this.apiUrl}/categories/${id}`);
+    constructor(private injector: Injector) {
+        super('categories', injector);
     }
 }

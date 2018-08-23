@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../../services/articles.service';
 
 @Component({
-    selector: 'app-list',
+    selector: 'app-list-article',
     templateUrl: './list.component.html',
 })
 
-export class ListComponent implements OnInit {
+export class ArticleListComponent implements OnInit {
     public articles;
     public page = 'list';
 

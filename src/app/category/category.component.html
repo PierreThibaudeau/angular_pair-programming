@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">n°{{category.id}} - {{ category.label }}</h5>
+
+    <a [routerLink]="['/categories', category.id, 'update']" class="btn btn-primary">Modifier</a>
+    <a (click)="deleteCategory(category.id)" class="btn btn-primary">Supprimer</a>
+
+    <a *ngIf="page === 'list'" [routerLink]="['/categories', category.id]" class="btn btn-primary">Détail</a>
+    <a *ngIf="page === 'detail'" [routerLink]="['/categories']" class="btn btn-primary">Liste</a>
+  </div>
+</div>

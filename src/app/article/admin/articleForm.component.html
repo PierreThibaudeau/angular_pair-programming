@@ -1,4 +1,4 @@
-<form (submit)="saveArticle()" #articleForm="ngForm">
+<form (submit)="saveArticle()" novalidate #articleForm="ngForm">
   <div class="form-group">
     <label for="title">Titre</label>
     <input class="form-control" #titleField="ngModel" required minlength="10" type="text" id="title" name="title" [(ngModel)]="article.title">

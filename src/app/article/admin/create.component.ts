@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../../services/articles.service';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-create',
+    selector: 'app-create-article',
     templateUrl: './articleForm.component.html',
 })
 
-export class CreateComponent {
+export class ArticleCreateComponent implements OnInit  {
     public article = {};
     public backRoute = [];
 
@@ -16,10 +16,13 @@ export class CreateComponent {
         private router: Router,
     ) {}
 
+    ngOnInit() {
+        this.backRoute = ['/articles'];
+    }
+
     saveArticle() {
         this.articlesService.create(this.article).subscribe( (articleCreated) => {
             this.router.navigate(['/articles', articleCreated['id']]);
-            this.backRoute = ['/articles'];
         });
     }
 }

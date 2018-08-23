@@ -1,0 +1,20 @@
+<form (submit)="saveCategory()" novalidate #categoryForm="ngForm">
+  <div class="form-group">
+    <label for="label">Label</label>
+    <input class="form-control" #labelField="ngModel" required type="text" id="label" name="label" [(ngModel)]="category.label">
+  </div>
+
+  <div *ngIf="labelField.invalid && (labelField.dirty || labelField.touched)"
+       class="alert alert-danger">
+
+    <div *ngIf="labelField.errors.required">
+      Label is required.
+    </div>
+
+  </div>
+
+  <input class="btn btn-primary" type="submit" [disabled]="categoryForm.invalid">
+</form>
+<br>
+<a [routerLink]="backRoute" class="btn btn-primary">Annuler</a>
+

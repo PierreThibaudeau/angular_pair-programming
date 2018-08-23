@@ -3,11 +3,11 @@ import { ArticlesService } from '../../services/articles.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-    selector: 'app-update',
+    selector: 'app-update-article',
     templateUrl: './articleForm.component.html',
 })
 
-export class UpdateComponent implements OnInit {
+export class ArticleUpdateComponent implements OnInit {
     public article = {};
     public backRoute = [];
 

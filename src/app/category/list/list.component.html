@@ -1,0 +1,10 @@
+<div class="row">
+    <app-category class="col-sm-6"
+                 *ngFor="let category of categories"
+                  [category]="category"
+                  [page]="page"
+    >
+    </app-category>
+</div>
+
+<a [routerLink]="['/categories/create']" class="btn btn-primary">Créer une catégorie</a>
