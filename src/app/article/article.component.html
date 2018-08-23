@@ -1,13 +1,13 @@
-<div class="article--container">
+<div class="element--container">
 
-  <h2 class="article--title">n°{{article.id}} - {{ article.title }}</h2>
+  <h1 class="element--title">n°{{article.id}} - {{ article.title }}</h1>
 
-  <div class="article--text-wrapper">
-    <p class="article--content">{{ article.content | truncatePipe: 100 }}</p>
-    <span class="article--comment-number" *ngIf="article.comments && article.comments.length">Nombre de commentaires : {{article.comments.length}}</span>
+  <div class="element--text-wrapper">
+    <p class="element--content">{{ article.content | truncatePipe: 100 }}</p>
+    <span class="element--comment-number" *ngIf="article.comments && article.comments.length">Nombre de commentaires : {{article.comments.length}}</span>
   </div>
 
-  <div class="article--links-wrapper">
+  <div class="element--links-wrapper">
     <a [routerLink]="[article.id]" class="btn btn-dark">Voir le détail de l'article</a>
     <a [routerLink]="['/articles', article.id, 'update']" class="btn btn-secondary">Modifier</a>
     <a (click)="deleteArticle(article.id)" class="btn btn-danger">Supprimer</a>

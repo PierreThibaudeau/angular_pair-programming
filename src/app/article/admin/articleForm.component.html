@@ -1,4 +1,4 @@
-<form class="article-form" (submit)="saveArticle()" #articleForm="ngForm">
+<form class="element-form" (submit)="saveArticle()" #articleForm="ngForm">
   <div class="form-group">
     <label for="article-title">Titre de l'article</label>
     <input class="form-control" #titleField="ngModel" required minlength="10" type="text"
@@ -36,7 +36,7 @@
 
   </div>
 
-  <input class="btn btn-dark article-form--action" type="submit" [disabled]="articleForm.invalid">
+  <input class="btn btn-dark element-form--action" type="submit" [disabled]="articleForm.invalid">
 </form>
 
-<a [routerLink]="backRoute" class="btn btn-secondary article-form--action">Annuler</a>
+<a [routerLink]="backRoute" class="btn btn-secondary element-form--action">Annuler</a>

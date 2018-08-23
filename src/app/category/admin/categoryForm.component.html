@@ -1,4 +1,4 @@
-<form class="category-form" (submit)="saveCategory()" novalidate #categoryForm="ngForm">
+<form class="element-form" (submit)="saveCategory()" novalidate #categoryForm="ngForm">
   <div class="form-group">
     <label for="label">Label</label>
     <input class="form-control" #labelField="ngModel" required type="text" id="label" name="label" [(ngModel)]="category.label">
@@ -13,8 +13,8 @@
 
   </div>
 
-  <input class="btn btn-dark category-form--action" type="submit" [disabled]="categoryForm.invalid">
+  <input class="btn btn-dark element-form--action" type="submit" [disabled]="categoryForm.invalid">
 </form>
 <br>
-<a [routerLink]="backRoute" class="btn btn-secondary category-form--action">Annuler</a>
+<a [routerLink]="backRoute" class="btn btn-secondary element-form--action">Annuler</a>
 
