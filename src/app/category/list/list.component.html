@@ -1,5 +1,5 @@
-<div class="categories">
+<div class="container-list categories">
     <app-category *ngFor="let category of categories" [category]="category"></app-category>
 </div>
 
-<a [routerLink]="['/categories/create']" class="btn btn-secondary category-create-button">Créer une catégorie</a>
+<a [routerLink]="['/categories/create']" class="btn btn-secondary element-create-button">Créer une catégorie</a>

@@ -1,17 +1,16 @@
-/** page articles **/
+/** pages de liste **/
 
 .container {
     margin-top: 50px;
 }
 
-/* ARTICLES */
-.article-create-button {
+.element-create-button {
     display: block;
     margin: 40px auto 0;
     max-width: 200px;
 }
 
-.articles {
+.container-list {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -19,13 +18,10 @@
     margin-top: 40px;
 }
 
-.articles >app-article {
-    margin-bottom: 20px;
-}
-
-.article--container {
+.element--container {
     border: 1px solid black;
     padding: 20px;
+    margin-bottom: 20px;
     height: 100%;
     position: relative;
     display: flex;
@@ -33,19 +29,23 @@
     justify-content: flex-start;
 }
 
-.article--text-wrapper {
+.category--title {
+    margin-bottom: 20px;
+}
+
+.element--text-wrapper {
     margin: 20px 0 25px;
 }
 
-.article--text-wrapper p {
+.element--text-wrapper p {
     margin-bottom: 10px;
 }
 
-.article--links-wrapper {
+.element--links-wrapper {
     margin-top: auto;
 }
 
-.article--container  .btn {
+.element--container  .btn {
     border-radius: 0;
     color: white;
     margin-bottom: 10px;
@@ -53,274 +53,112 @@
 }
 
 @media screen and (max-width: 769px) {
-    .article--links-wrapper {
+    .element--links-wrapper {
         display: flex;
         flex-direction: column;
     }
 
-    .article--container  .btn {
+    .element--container  .btn {
         width: 100%;
         max-width: 300px;
         margin: 0 auto 10px;
     }
 }
 
-/** page detail articles **/
+/** page detail **/
 
-.article-full--container {
+.element-full--container {
     padding: 20px;
 }
 
-.article-full--comments-container {
+.element-full--comments-container {
     margin: 20px;
 }
 
-.article-full--comments-title {
+.element-full--comments-title {
     margin-bottom: 20px;
 }
 
-.article-full--comment-wrapper {
+.element-full--comment-wrapper {
     border: 1px solid black;
     padding: 10px;
     margin-bottom: 15px;
 }
 
-.article-full--comment-user {
+.element-full--comment-user {
     text-decoration: underline;
     font-size: 1.2em;
     margin-bottom: 15px;
     display: block;
 }
 
-.article-full--comment-content {
+.element-full--comment-content {
     margin-bottom: 0;
 }
 
-.article-full--header {
-    position: relative;
-}
-
-.article-full--links-wrapper {
+.element-full--links-wrapper {
     display: flex;
     justify-content: center;
     margin: 20px 0 60px;
 }
 
-.article-full--links-wrapper a {
+.element-full--links-wrapper .btn {
     display: block;
     border-radius: 0;
     color: white;
     margin: 0 20px 10px 0;
-    width: 220px;
+    min-width: 240px;
 }
-.article-full--links-wrapper a:last-of-type {
+.element-full--links-wrapper a:last-of-type {
     margin-right: 0;
 }
 
 
 @media screen and (max-width: 769px) {
-    .article-full--links-wrapper {
+    .element-full--links-wrapper {
         flex-direction: column;
     }
 
-    .article-full--links-wrapper a {
+    .element-full--links-wrapper >a {
         margin: 0 auto 10px;
         width: 300px;
     }
 
-    .article-full--links-wrapper a:last-of-type {
+    .element-full--links-wrapper a:last-of-type {
         margin-right: auto;
     }
 }
 
-/** page form admin articles **/
+/** page form **/
 
-.article-form {
+.element-form {
     margin-top: 30px;
 }
 
-.article-form label {
+.element-form label {
     font-size: 1.3em;
     margin-bottom: 10px;
 }
 
-.article-form textarea, .article-form input {
+.element-form textarea, .element-form input {
     margin-bottom: 30px;
 }
 
-.article-form input[type='submit'] {
+.element-form input[type='submit'] {
    margin: 60px auto 20px;
 }
 
-.article-form--action {
+.element-form--action {
     display: block;
     width: 300px;
     margin: 0 auto;
 }
 
-.article-form .alert {
+.element-form .alert {
     margin: -30px 0 30px;
 }
 
-/* CATEGORIES */
-.category-create-button {
-    display: block;
-    margin: 40px auto 0;
-    max-width: 200px;
-}
-
-.categorys {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.categorys >app-category {
-    margin-bottom: 20px;
-}
-
-.category--container {
-    border: 1px solid black;
-    padding: 20px;
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.category--text-wrapper {
-    margin: 20px 0 25px;
-}
-
-.category--text-wrapper p {
-    margin-bottom: 10px;
-}
-
-.category--links-wrapper {
-    margin-top: auto;
-}
-
-.category--container  .btn {
-    border-radius: 0;
-    color: white;
-    margin-bottom: 10px;
-    width: 33%;
-}
-
-@media screen and (max-width: 769px) {
-    .category--links-wrapper {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .category--container  .btn {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto 10px;
-    }
-}
-
-/** page detail categorys **/
-
-.category-full--container {
-    padding: 20px;
-}
-
-.category-full--comments-container {
-    margin: 20px;
-}
-
-.category-full--comments-title {
-    margin-bottom: 20px;
-}
-
-.category-full--comment-wrapper {
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-.category-full--comment-user {
-    text-decoration: underline;
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.category-full--comment-content {
-    margin-bottom: 0;
-}
-
-.category-full--header {
-    position: relative;
-}
-
-.category-full--links-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0 60px;
-}
-
-.category-full--links-wrapper a {
-    display: block;
-    border-radius: 0;
-    color: white;
-    margin: 0 20px 10px 0;
-    width: 220px;
-}
-.category-full--links-wrapper a:last-of-type {
-    margin-right: 0;
-}
-
-
-@media screen and (max-width: 769px) {
-    .category-full--links-wrapper {
-        flex-direction: column;
-    }
-
-    .category-full--links-wrapper a {
-        margin: 0 auto 10px;
-        width: 300px;
-    }
-
-    .category-full--links-wrapper a:last-of-type {
-        margin-right: auto;
-    }
-}
-
-/** page form admin categorys **/
-
-.category-form {
-    margin-top: 30px;
-}
-
-.category-form label {
-    font-size: 1.3em;
-    margin-bottom: 10px;
-}
-
-.category-form textarea, .category-form input {
-    margin-bottom: 30px;
-}
-
-.category-form input[type='submit'] {
-    margin: 60px auto 20px;
-}
-
-.category-form--action {
-    display: block;
-    width: 300px;
-    margin: 0 auto;
-}
-
-.category-form .alert {
-    margin: -30px 0 30px;
-}
-
-/** components **/
+/** Components **/
 
 p {
     text-align: justify;
