@@ -7,23 +7,27 @@
 /* ARTICLES */
 .article-create-button {
     display: block;
-    margin: 60px auto 0;
+    margin: 40px auto 0;
     max-width: 200px;
 }
 
 .articles {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 40px;
+}
+
+.articles >app-article {
+    margin-bottom: 20px;
 }
 
 .article--container {
     border: 1px solid black;
     padding: 20px;
-    margin-right: 30px;
     height: 100%;
     position: relative;
-    width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -45,19 +49,26 @@
     border-radius: 0;
     color: white;
     margin-bottom: 10px;
-    width: 50%;
+    width: 33%;
 }
 
-.article--container  .btn-dark {
-    display: block;
-    width: 100%;
+@media screen and (max-width: 769px) {
+    .article--links-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article--container  .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 10px;
+    }
 }
 
 /** page detail articles **/
 
 .article-full--container {
     padding: 20px;
-    margin-right: 30px;
 }
 
 .article-full--comments-container {
@@ -99,11 +110,27 @@
     display: block;
     border-radius: 0;
     color: white;
-    margin-right: 20px;
+    margin: 0 20px 10px 0;
+    width: 220px;
+}
+.article-full--links-wrapper a:last-of-type {
+    margin-right: 0;
 }
 
-.article-full--container a:last-child {
 
+@media screen and (max-width: 769px) {
+    .article-full--links-wrapper {
+        flex-direction: column;
+    }
+
+    .article-full--links-wrapper a {
+        margin: 0 auto 10px;
+        width: 300px;
+    }
+
+    .article-full--links-wrapper a:last-of-type {
+        margin-right: auto;
+    }
 }
 
 /** page form admin articles **/
@@ -135,28 +162,30 @@
     margin: -30px 0 30px;
 }
 
-
 /* CATEGORIES */
-
 .category-create-button {
     display: block;
-    margin: 60px auto 0;
+    margin: 40px auto 0;
     max-width: 200px;
 }
 
 .categorys {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 40px;
+}
+
+.categorys >app-category {
+    margin-bottom: 20px;
 }
 
 .category--container {
     border: 1px solid black;
     padding: 20px;
-    margin-right: 30px;
     height: 100%;
     position: relative;
-    width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -178,19 +207,51 @@
     border-radius: 0;
     color: white;
     margin-bottom: 10px;
-    width: 50%;
+    width: 33%;
 }
 
-.category--container  .btn-dark {
-    display: block;
-    width: 100%;
+@media screen and (max-width: 769px) {
+    .category--links-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category--container  .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 10px;
+    }
 }
 
-/** page detail categories **/
+/** page detail categorys **/
 
 .category-full--container {
     padding: 20px;
-    margin-right: 30px;
+}
+
+.category-full--comments-container {
+    margin: 20px;
+}
+
+.category-full--comments-title {
+    margin-bottom: 20px;
+}
+
+.category-full--comment-wrapper {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.category-full--comment-user {
+    text-decoration: underline;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.category-full--comment-content {
+    margin-bottom: 0;
 }
 
 .category-full--header {
@@ -207,11 +268,27 @@
     display: block;
     border-radius: 0;
     color: white;
-    margin-right: 20px;
+    margin: 0 20px 10px 0;
+    width: 220px;
+}
+.category-full--links-wrapper a:last-of-type {
+    margin-right: 0;
 }
 
-.category-full--container a:last-child {
 
+@media screen and (max-width: 769px) {
+    .category-full--links-wrapper {
+        flex-direction: column;
+    }
+
+    .category-full--links-wrapper a {
+        margin: 0 auto 10px;
+        width: 300px;
+    }
+
+    .category-full--links-wrapper a:last-of-type {
+        margin-right: auto;
+    }
 }
 
 /** page form admin categorys **/
@@ -241,4 +318,10 @@
 
 .category-form .alert {
     margin: -30px 0 30px;
+}
+
+/** components **/
+
+p {
+    text-align: justify;
 }
