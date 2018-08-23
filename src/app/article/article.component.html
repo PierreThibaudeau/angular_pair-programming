@@ -10,7 +10,7 @@
   <div class="element--links-wrapper">
     <a [routerLink]="[article.id]" class="btn btn-dark">Voir le détail de l'article</a>
     <a [routerLink]="['/articles', article.id, 'update']" class="btn btn-secondary">Modifier</a>
-    <a (click)="deleteArticle(article.id)" class="btn btn-danger">Supprimer</a>
+    <app-delete-article class="btn btn-danger" [id_article]="article.id"></app-delete-article>
   </div>
 
 </div>

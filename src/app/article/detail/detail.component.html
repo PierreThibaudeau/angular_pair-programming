@@ -4,7 +4,7 @@
 
     <div class="element-full--links-wrapper">
         <a [routerLink]="['/articles', article.id, 'update']" class="btn btn-secondary">Modifier</a>
-        <a (click)="deleteArticle(article.id)" class="btn btn-danger">Supprimer</a>
+        <app-delete-article class="btn btn-danger" [id_article]="article.id"></app-delete-article>
         <a routerLink="/articles" class="btn btn-dark">Retour à la liste des articles</a>
     </div>
 
