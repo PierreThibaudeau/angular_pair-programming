@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ArticlesService } from '../../../services/articles.service';
+import { ArticlesService } from '../../services/articles.service';
 import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-create',
-    templateUrl: '../articleForm.component.html',
+    templateUrl: './articleForm.component.html',
 })
 
 export class CreateComponent {

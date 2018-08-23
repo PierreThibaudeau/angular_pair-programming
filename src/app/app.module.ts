@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { ListComponent } from './article/list/list.component';
 import { DetailComponent } from './article/detail/detail.component';
-import { UpdateComponent } from './article/admin/update/update.component';
-import { CreateComponent } from './article/admin/create/create.component';
+import { UpdateComponent } from './article/admin/update.component';
+import { CreateComponent } from './article/admin/create.component';
 
 import { TruncatePipe } from './pipes/truncate.pipe';
 

@@ -1,10 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { ArticlesService } from '../../../services/articles.service';
+import {Component, OnInit} from '@angular/core';
+import { ArticlesService } from '../../services/articles.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-update',
-    templateUrl: '../articleForm.component.html',
+    templateUrl: './articleForm.component.html',
 })
 
 export class UpdateComponent implements OnInit {
