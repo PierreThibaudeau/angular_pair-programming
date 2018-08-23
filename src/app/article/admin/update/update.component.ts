@@ -1,27 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { ArticlesService } from '../../../services/articles.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-update',
-    templateUrl: './update.component.html',
+    templateUrl: '../articleForm.component.html',
 })
 
 export class UpdateComponent implements OnInit {
     public article = {};
+    public backRoute = [];
 
     constructor(
         private articlesService: ArticlesService,
         private route: ActivatedRoute,
+        private router: Router,
     ) {}
 
     ngOnInit() {
         const snapshot = this.route.snapshot;
         const id = snapshot.params.id;
-        this.articlesService.getById(id).subscribe(articleFromServer => this.article = articleFromServer);
+        this.articlesService.getById(id).subscribe((articleFromServer) => {
+            this.article = articleFromServer;
+            this.backRoute = ['/articles', this.article['id']];
+        });
     }
 
     saveArticle() {
-        this.articlesService.update(this.article).subscribe();
+        this.articlesService.update(this.article).subscribe( () => {
+            this.router.navigate(['/articles', this.article['id']]);
+        });
     }
 }

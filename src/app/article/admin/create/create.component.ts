@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ArticlesService } from '../../../services/articles.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-create',
-    templateUrl: './create.component.html',
+    templateUrl: '../articleForm.component.html',
 })
 
 export class CreateComponent {
     public article = {};
+    public backRoute = [];
 
     constructor(
         private articlesService: ArticlesService,
+        private router: Router,
     ) {}
 
     saveArticle() {
-        this.articlesService.create(this.article).subscribe();
+        this.articlesService.create(this.article).subscribe( (articleCreated) => {
+            this.router.navigate(['/articles', articleCreated['id']]);
+            this.backRoute = ['/articles'];
+        });
     }
 }
