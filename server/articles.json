@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "My first article", 
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ligula nunc, varius vitae egestas eu, euismod eget libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec molestie eros, non feugiat quam. Vivamus sit amet felis dictum velit tincidunt facilisis quis et risus. Quisque at aliquam massa. Curabitur nibh magna, placerat eget vulputate et, pulvinar in sem. Pellentesque lobortis efficitur sollicitudin. Pellentesque viverra eu lectus ac fermentum. In placerat consectetur magna in consequat. Fusce a tortor at nibh interdum maximus. Suspendisse sit amet placerat lorem. Suspendisse non leo leo. Ut et elit et felis sagittis aliquam id blandit tellus. Pellentesque dapibus bibendum risus ut commodo.",
+    "categories": [1,2],
+    "comments": [
+      {
+        "username": "bob",
+        "content": "Great article"
+      },
+      {
+        "username": "dan",
+        "content": "Nice article"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Lorem ipsum",
+    "content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent hendrerit metus nec enim consequat semper. Nulla cursus sem accumsan leo viverra, accumsan vestibulum lacus auctor. Nam sit amet aliquam mauris. Donec sed placerat nulla. Morbi rutrum dui et mauris dapibus feugiat. Sed facilisis nulla justo, eget consectetur nulla ornare sed. Duis a urna eleifend, ornare felis nec, facilisis nisi. Sed vestibulum magna vel pellentesque pellentesque. Duis sit amet mollis tellus. In sed pellentesque est, vitae venenatis nisi. Praesent commodo dui nec massa varius, nec dignissim lacus interdum.", 
+    "categories": [1],
+    "comments": []
+  }
+]

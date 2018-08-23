@@ -1,20 +1,37 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">n°{{article.id}} - {{ article.title }}</h5>
-    <p class="card-text">{{ page === 'list' ? (article.content | truncatePipe:30) : article.content}}</p>
+<div class="article--container">
 
-    <p class="card-text" *ngIf="page === 'list' && article.comments && article.comments.length">{{ article.comments.length }}</p>
-    <div  *ngIf="page === 'detail' && article.comments && article.comments.length" >
-      <div *ngFor="let comment of article.comments">
-        <h6>{{ comment.username }}</h6>
-        <span>{{ comment.content }}</span>
-      </div>
-    </div>
+  <h2 class="article--title">n°{{article.id}} - {{ article.title }}</h2>
 
-    <a [routerLink]="['/articles', article.id, 'update']" class="btn btn-primary">Modifier</a>
-    <a (click)="deleteArticle(article.id)" class="btn btn-primary">Supprimer</a>
-
-    <a *ngIf="page === 'list'" [routerLink]="['/articles', article.id]" class="btn btn-primary">Détail</a>
-    <a *ngIf="page === 'detail'" [routerLink]="['/articles']" class="btn btn-primary">Liste</a>
+  <div class="article--text-wrapper">
+    <p class="article--content">{{ article.content | truncatePipe: 100 }}</p>
+    <span class="article--comment-number" *ngIf="article.comments && article.comments.length">Nombre de commentaires : {{article.comments.length}}</span>
   </div>
+
+  <div class="article--links-wrapper">
+    <a [routerLink]="[article.id]" class="btn btn-dark">Voir le détail de l'article</a>
+    <a [routerLink]="['/articles', article.id, 'update']" class="btn btn-secondary">Modifier</a>
+    <a (click)="deleteArticle(article.id)" class="btn btn-danger">Supprimer</a>
+  </div>
+
 </div>
+
+<!--<div class="card">-->
+  <!--<div class="card-body">-->
+    <!--<h5 class="card-title">n°{{article.id}} - {{ article.title }}</h5>-->
+    <!--<p class="card-text">{{ page === 'list' ? (article.content | truncatePipe:30) : article.content}}</p>-->
+
+    <!--<p class="card-text" *ngIf="page === 'list' && article.comments && article.comments.length">{{ article.comments.length }}</p>-->
+    <!--<div  *ngIf="page === 'detail' && article.comments && article.comments.length" >-->
+      <!--<div *ngFor="let comment of article.comments">-->
+        <!--<h6>{{ comment.username }}</h6>-->
+        <!--<span>{{ comment.content }}</span>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<a [routerLink]="['/articles', article.id, 'update']" class="btn btn-primary">Modifier</a>-->
+    <!--<a (click)="deleteArticle(article.id)" class="btn btn-primary">Supprimer</a>-->
+
+    <!--<a *ngIf="page === 'list'" [routerLink]="['/articles', article.id]" class="btn btn-primary">Détail</a>-->
+    <!--<a *ngIf="page === 'detail'" [routerLink]="['/articles']" class="btn btn-primary">Liste</a>-->
+  <!--</div>-->
+<!--</div>-->

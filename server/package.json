@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "simple REST server for the Angular2 formation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony server.js"
+  },
+  "repository": "",
+  "author": "@Swiip",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.2.6",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "node-uuid": "~1.4.1",
+    "underscore": "~1.4.4"
+  }
+}

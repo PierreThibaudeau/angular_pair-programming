@@ -1,40 +1,42 @@
-<form (submit)="saveArticle()" novalidate #articleForm="ngForm">
+<form class="article-form" (submit)="saveArticle()" #articleForm="ngForm">
   <div class="form-group">
-    <label for="title">Titre</label>
-    <input class="form-control" #titleField="ngModel" required minlength="10" type="text" id="title" name="title" [(ngModel)]="article.title">
+    <label for="article-title">Titre de l'article</label>
+    <input class="form-control" #titleField="ngModel" required minlength="10" type="text"
+           id="article-title" name="article-title" [(ngModel)]="article.title">
   </div>
 
   <div *ngIf="titleField.invalid && (titleField.dirty || titleField.touched)"
        class="alert alert-danger">
 
     <div *ngIf="titleField.errors.required">
-      Name is required.
+      Ce champ est obligatoire
     </div>
     <div *ngIf="titleField.errors.minlength">
-      Name must be at least 10 characters long.
+      Le nom doit contenir au minimum 10 caractères
     </div>
 
   </div>
 
   <div class="form-group">
-    <label for="content">Contenu</label>
-    <textarea class="form-control" #contentField="ngModel" required minlength="30" type="text" id="content" name="content" [(ngModel)]="article.content"></textarea>
+    <label for="article-content">Contenu de l'article</label>
+    <textarea class="form-control" #contentField="ngModel" required minlength="30" type="text"
+              id="article-content" rows="7" name="content" [(ngModel)]="article.content">
+    </textarea>
   </div>
 
   <div *ngIf="contentField.invalid && (contentField.dirty || contentField.touched)"
        class="alert alert-danger">
 
     <div *ngIf="contentField.errors.required">
-      Content is required.
+      Ce champ est obligatoire
     </div>
     <div *ngIf="contentField.errors.minlength">
-      Content must be at least 30 characters long.
+      Le texte doit contenir au minimum 30 caractères
     </div>
 
   </div>
 
-  <input class="btn btn-primary" type="submit" [disabled]="articleForm.invalid">
+  <input class="btn btn-dark article-form--action" type="submit" [disabled]="articleForm.invalid">
 </form>
-<br>
-<a [routerLink]="backRoute" class="btn btn-primary">Annuler</a>
 
+<a [routerLink]="backRoute" class="btn btn-secondary article-form--action">Annuler</a>

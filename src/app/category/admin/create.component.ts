@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-create-category',
     templateUrl: './categoryForm.component.html',
+    styleUrls: ['../../app.component.css']
 })
 
 export class CategoryCreateComponent implements OnInit  {
@@ -17,7 +18,7 @@ export class CategoryCreateComponent implements OnInit  {
     ) {}
 
     ngOnInit() {
-        this.backRoute = ['/articles'];
+        this.backRoute = ['/categories'];
     }
 
     saveCategory() {

@@ -1,6 +1,9 @@
-<app-category
-  [category]="category"
-  [page]="page"
->
+<div class="category-full--container">
+  <h1 class="category-full--label">n°{{category.id}} - {{ category.label }}</h1>
 
-</app-category>
+  <div class="category-full--links-wrapper">
+    <a [routerLink]="['/categories', category.id, 'update']" class="btn btn-secondary">Modifier</a>
+    <a (click)="deleteCategory(category.id)" class="btn btn-danger">Supprimer</a>
+    <a routerLink="/categories" class="btn btn-dark">Retour à la liste des Catégories</a>
+  </div>
+</div>

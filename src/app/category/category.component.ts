@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
+  styleUrls: ['../app.component.css']
 })
 
 export class CategoryComponent {
   @Input() category;
-  @Input() page;
 
   constructor(
       private categoriesService: CategoriesService,

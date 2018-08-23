@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
     selector: 'app-detail-article',
     templateUrl: './detail.component.html',
+    styleUrls: ['../../app.component.css']
 })
 
 export class ArticleDetailComponent implements OnInit {
     public article = {};
-    public page = 'detail';
 
     constructor(
         private articlesService: ArticlesService,

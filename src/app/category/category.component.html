@@ -1,3 +1,17 @@
+<div class="category--container">
+
+  <h2 class="category--label">n°{{category.id}} - {{ category.label }}</h2>
+
+  <div class="category--links-wrapper">
+    <a [routerLink]="['/categories', category.id]" class="btn btn-dark">Voir le détail de la catégorie</a>
+    <a [routerLink]="['/categories', category.id, 'update']" class="btn btn-secondary">Modifier</a>
+    <a (click)="deleteCategory(category.id)" class="btn btn-danger">Supprimer</a>
+  </div>
+
+</div>
+
+
+<!--
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">n°{{category.id}} - {{ category.label }}</h5>
@@ -9,3 +23,4 @@
     <a *ngIf="page === 'detail'" [routerLink]="['/categories']" class="btn btn-primary">Liste</a>
   </div>
 </div>
+-->

@@ -1,0 +1,8 @@
+{
+	"port": 8080,
+	"articles": "./articles.json",
+	"categories": "./categories.json",
+	"user": "./user.json",
+	"JWT_SECRET": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE1MzQ1MTYyNzAsImV4cCI6MTU2NjA1MjI3MCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.1a1ayXmOw68JlsY84viaeGOdtbmAkR6fEDdlzY28fIE",
+	"root": "../"
+}

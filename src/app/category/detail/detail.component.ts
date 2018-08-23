@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
     selector: 'app-detail-category',
     templateUrl: './detail.component.html',
+    styleUrls: ['../../app.component.css']
 })
 
 export class CategoryDetailComponent implements OnInit {
     public category = {};
-    public page = 'detail';
 
     constructor(
         private categoriesService: CategoriesService,

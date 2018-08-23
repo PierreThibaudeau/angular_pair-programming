@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
     selector: 'app-update-category',
     templateUrl: './categoryForm.component.html',
+    styleUrls: ['../../app.component.css']
 })
 
 export class CategoryUpdateComponent implements OnInit {
