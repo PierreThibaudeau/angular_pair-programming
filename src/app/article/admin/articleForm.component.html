@@ -5,16 +5,9 @@
            id="article-title" name="article-title" [(ngModel)]="article.title">
   </div>
 
-  <div *ngIf="titleField.invalid && (titleField.dirty || titleField.touched)"
-       class="alert alert-danger">
-
-    <div *ngIf="titleField.errors.required">
-      Ce champ est obligatoire
-    </div>
-    <div *ngIf="titleField.errors.minlength">
-      Le nom doit contenir au minimum 10 caractères
-    </div>
-
+  <div *ngIf="titleField.invalid && (titleField.dirty || titleField.touched)" class="alert alert-danger">
+    <div *ngIf="titleField.errors.required">Ce champ est obligatoire</div>
+    <div *ngIf="titleField.errors.minlength">Le nom doit contenir au minimum 10 caractères</div>
   </div>
 
   <div class="form-group">
@@ -24,16 +17,25 @@
     </textarea>
   </div>
 
-  <div *ngIf="contentField.invalid && (contentField.dirty || contentField.touched)"
-       class="alert alert-danger">
+  <div *ngIf="contentField.invalid && (contentField.dirty || contentField.touched)" class="alert alert-danger">
+    <div *ngIf="contentField.errors.required">Ce champ est obligatoire</div>
+    <div *ngIf="contentField.errors.minlength">Le texte doit contenir au minimum 30 caractères</div>
+  </div>
 
-    <div *ngIf="contentField.errors.required">
-      Ce champ est obligatoire
-    </div>
-    <div *ngIf="contentField.errors.minlength">
-      Le texte doit contenir au minimum 30 caractères
-    </div>
-
+  <div class="form-group">
+    <!--
+    <label for="article-categories">Catégories de l'article</label>
+    <select multiple chosen name="categories[]" id="article-categories" title="Choisir">
+      <option value="">Aucune</option>
+      <option *ngFor="let category of categories" [value]="category.id">{{category.label}}</option>
+    </select>
+    -->
+      <mat-select multiple placeholder="Catégorie">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{category.label}}
+        </mat-option>
+      </mat-select>
   </div>
 
   <input class="btn btn-dark article-form--action" type="submit" [disabled]="articleForm.invalid">
