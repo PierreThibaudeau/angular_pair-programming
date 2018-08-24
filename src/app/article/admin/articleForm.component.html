@@ -23,19 +23,15 @@
   </div>
 
   <div class="form-group">
-    <!--
-    <label for="article-categories">Catégories de l'article</label>
-    <select multiple chosen name="categories[]" id="article-categories" title="Choisir">
-      <option value="">Aucune</option>
-      <option *ngFor="let category of categories" [value]="category.id">{{category.label}}</option>
-    </select>
-    -->
-      <mat-select multiple placeholder="Catégorie">
-        <mat-option>None</mat-option>
+    <mat-form-field>
+      <mat-select multiple placeholder="Catégorie" required
+                  id="article-categories" name="article-categories"
+                  #categoriesField="ngModel" [(ngModel)]="article.categories">
         <mat-option *ngFor="let category of categories" [value]="category.id">
           {{category.label}}
         </mat-option>
       </mat-select>
+    </mat-form-field>
   </div>
 
   <input class="btn btn-dark element-form--action" type="submit" [disabled]="articleForm.invalid">

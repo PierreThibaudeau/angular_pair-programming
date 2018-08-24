@@ -30,7 +30,6 @@ export class ArticleUpdateComponent implements OnInit {
         });
         this.categoriesService.getAll().subscribe( (categoriesFromServer) => {
             this.categories = categoriesFromServer;
-            console.log(this.categories);
         });
     }
 
