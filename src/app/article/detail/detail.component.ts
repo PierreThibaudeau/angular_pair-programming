@@ -23,4 +23,7 @@ export class ArticleDetailComponent implements OnInit {
             this.article =  articleFromServer;
         });
     }
+    addComment(comments) {
+        this.article['comments'] = comments;
+    }
 }

@@ -1,0 +1,29 @@
+<form class="comment-form" (submit)="saveComment()" #commentForm="ngForm">
+
+    <div class="form-group">
+        <label for="comment-username">Nom</label>
+        <input class="form-control" #usernameField="ngModel" required type="text"
+               id="comment-username" name="comment-username" [(ngModel)]="comment.username">
+    </div>
+    <div *ngIf="usernameField.invalid && (usernameField.dirty || usernameField.touched)"
+         class="alert alert-danger">
+        <div *ngIf="usernameField.errors.required">
+            Ce champ est obligatoire
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="comment-content">Commentaire</label>
+        <textarea class="form-control" #contentField="ngModel" type="text"
+                  id="comment-content" rows="7" name="comment-content" [(ngModel)]="comment.content">
+        </textarea>
+    </div>
+    <div *ngIf="contentField.invalid && (contentField.dirty || contentField.touched)"
+         class="alert alert-danger">
+        <div *ngIf="contentField.errors.required">
+            Ce champ est obligatoire
+        </div>
+    </div>
+
+    <input class="btn btn-dark element-form--action" type="submit" [disabled]="commentForm.invalid">
+</form>

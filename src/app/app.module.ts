@@ -25,6 +25,7 @@ import { ArticleDetailComponent } from './article/detail/detail.component';
 import { ArticleUpdateComponent } from './article/admin/update.component';
 import { ArticleCreateComponent } from './article/admin/create.component';
 import { ArticleDeleteComponent } from './article/admin/delete.component';
+import { ArticleCommentComponent } from './article/comment/comment.component';
 
 // Categories
 import { CategoryComponent } from './category/category.component';
@@ -67,6 +68,7 @@ export class MaterialModule {}
     ArticleUpdateComponent,
     ArticleCreateComponent,
     ArticleDeleteComponent,
+    ArticleCommentComponent,
     CategoryComponent,
     CategoryDetailComponent,
     CategoryListComponent,

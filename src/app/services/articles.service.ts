@@ -19,4 +19,8 @@ export class ArticlesService extends Service {
             resolve(articles);
         }));
     }
+    
+    addComment(id, comment) {
+        return this.http.post(this.apiUrl + '/articles/' + id + '/comments', comment);
+    }
 }
