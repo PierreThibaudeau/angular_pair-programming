@@ -32,9 +32,7 @@ export class ArticleCommentComponent implements OnInit {
     }
 
     saveComment() {
-        console.log(this.comment);
         this.articlesService.addComment(this.article['id'], this.comment).subscribe((commentCreated) => {
-            console.log(commentCreated);
             this.article.comments = commentCreated.comments;
             this.newComment.emit(commentCreated.comments);
         });
