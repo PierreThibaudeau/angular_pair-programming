@@ -15,4 +15,9 @@
             <p class="element-full--comment-content">{{comment.content}}</p>
         </div>
     </div>
+
+    <div class="element-full--commentsCreation-container">
+        <h2>Ajouter un commentaire</h2>
+        <app-article-comment (newComment)="addComment($event)"></app-article-comment>
+    </div>
 </div>
