@@ -63,7 +63,7 @@ app.get(context + '/articles/:id', function (req, res) {
 });
 
 app.post(context + '/articles', (req, res) => {
-  if(lodash.differenceBy(req.body.categories, categories, 'id').length) {
+  if(lodash.difference(req.body.categories, categories.map(c => c.id)).length) {
     throw `Article avec une categorie inconnu`
   }
   const newArticle = { ...req.body, id: lodash.findLast(articles).id + 1, comments: [] }
@@ -78,7 +78,7 @@ app.put(context + '/articles/:id', (req, res) => {
   if(index === -1) {
     throw `Article avec l'id ${id} inconnu`
   }
-  if(lodash.differenceBy(req.body.categories, categories, 'id').length) {
+  if(lodash.difference(req.body.categories, categories.map(c => c.id)).length) {
     throw `Article avec une categorie inconnu`
   }
 

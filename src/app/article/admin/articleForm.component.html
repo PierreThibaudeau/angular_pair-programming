@@ -5,16 +5,9 @@
            id="article-title" name="article-title" [(ngModel)]="article.title">
   </div>
 
-  <div *ngIf="titleField.invalid && (titleField.dirty || titleField.touched)"
-       class="alert alert-danger">
-
-    <div *ngIf="titleField.errors.required">
-      Ce champ est obligatoire
-    </div>
-    <div *ngIf="titleField.errors.minlength">
-      Le nom doit contenir au minimum 10 caractères
-    </div>
-
+  <div *ngIf="titleField.invalid && (titleField.dirty || titleField.touched)" class="alert alert-danger">
+    <div *ngIf="titleField.errors.required">Ce champ est obligatoire</div>
+    <div *ngIf="titleField.errors.minlength">Le nom doit contenir au minimum 10 caractères</div>
   </div>
 
   <div class="form-group">
@@ -24,16 +17,21 @@
     </textarea>
   </div>
 
-  <div *ngIf="contentField.invalid && (contentField.dirty || contentField.touched)"
-       class="alert alert-danger">
+  <div *ngIf="contentField.invalid && (contentField.dirty || contentField.touched)" class="alert alert-danger">
+    <div *ngIf="contentField.errors.required">Ce champ est obligatoire</div>
+    <div *ngIf="contentField.errors.minlength">Le texte doit contenir au minimum 30 caractères</div>
+  </div>
 
-    <div *ngIf="contentField.errors.required">
-      Ce champ est obligatoire
-    </div>
-    <div *ngIf="contentField.errors.minlength">
-      Le texte doit contenir au minimum 30 caractères
-    </div>
-
+  <div class="form-group">
+    <mat-form-field>
+      <mat-select multiple placeholder="Catégorie" required
+                  id="article-categories" name="article-categories"
+                  #categoriesField="ngModel" [(ngModel)]="article.categories">
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{category.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <input class="btn btn-dark element-form--action" type="submit" [disabled]="articleForm.invalid">

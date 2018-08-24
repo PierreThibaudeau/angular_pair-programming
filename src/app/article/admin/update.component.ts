@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import { ArticlesService } from '../../services/articles.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ArticlesService } from '../../services/articles.service';
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
     selector: 'app-update-article',
@@ -10,10 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class ArticleUpdateComponent implements OnInit {
     public article = {};
+    public categories = [];
     public backRoute = [];
 
     constructor(
         private articlesService: ArticlesService,
+        private categoriesService: CategoriesService,
         private route: ActivatedRoute,
         private router: Router,
     ) {}
@@ -24,6 +27,9 @@ export class ArticleUpdateComponent implements OnInit {
         this.articlesService.getById(id).subscribe((articleFromServer) => {
             this.article = articleFromServer;
             this.backRoute = ['/articles', this.article['id']];
+        });
+        this.categoriesService.getAll().subscribe( (categoriesFromServer) => {
+            this.categories = categoriesFromServer;
         });
     }
 

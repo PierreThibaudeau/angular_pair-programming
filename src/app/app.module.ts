@@ -5,6 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+// Angular Material
+import {
+  MatButtonModule, MatCheckboxModule,
+  MatInputModule, MatListModule,
+  MatRadioModule, MatSelectModule,
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 // App
 import { AppComponent } from './app.component';
 
@@ -41,6 +50,15 @@ import { environment } from '../environments/environment';
 const apiUrl: string = environment.apiUrl;
 
 @NgModule({
+  exports: [
+    MatButtonModule, MatCheckboxModule,
+    MatInputModule, MatListModule,
+    MatRadioModule, MatSelectModule,
+  ]
+})
+export class MaterialModule {}
+
+@NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
@@ -63,6 +81,8 @@ const apiUrl: string = environment.apiUrl;
     HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [
     { provide: 'apiUrl', useValue: apiUrl },
@@ -72,5 +92,6 @@ const apiUrl: string = environment.apiUrl;
   bootstrap: [AppComponent]
 })
 
-export class AppModule {
-}
+export class AppModule {}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
