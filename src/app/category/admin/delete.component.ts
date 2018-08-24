@@ -21,7 +21,7 @@ export class CategoryDeleteComponent {
     deleteCategory(id) {
         if (confirm('La suppression de cette catégorie sera répercutée sur tous ses articles, souhaitez-vous continuer ?')) {
             this.articlesService.getAllByCategory(id).then((articlesWithCurrentCategory: Array<any>) => {
-                const promises = [];
+                let promises = [];
                 if (articlesWithCurrentCategory.length > 0) {
                     promises = articlesWithCurrentCategory
                         .map(a => ({...a, categories: a.categories.filter(e => e !== id)}))
