@@ -24,7 +24,6 @@ export class ArticleCreateComponent implements OnInit  {
         this.backRoute = ['/articles'];
         this.categoriesService.getAll().subscribe( (categoriesFromServer) => {
             this.categories = categoriesFromServer;
-            console.log(this.categories);
         });
     }
 

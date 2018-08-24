@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // Angular Material
 import {
+  /*MatAutocompleteModule,*/
   MatButtonModule, MatCheckboxModule,
   MatInputModule, MatListModule,
-  MatRadioModule, MatSelectModule,
+  MatRadioModule, MatSelectModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -52,7 +53,7 @@ const apiUrl: string = environment.apiUrl;
   exports: [
     MatButtonModule, MatCheckboxModule,
     MatInputModule, MatListModule,
-    MatRadioModule, MatSelectModule,
+    MatRadioModule, MatSelectModule, /*MatAutocompleteModule,*/
   ]
 })
 export class MaterialModule {}
@@ -81,6 +82,7 @@ export class MaterialModule {}
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    // ReactiveFormsModule,
   ],
   providers: [
     { provide: 'apiUrl', useValue: apiUrl },

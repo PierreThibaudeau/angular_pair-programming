@@ -6,6 +6,26 @@
     {
       "id": 2,
       "label": "Sport"
+    },
+    {
+      "id": 3,
+      "label": "Society"
+    },
+    {
+      "id": 4,
+      "label": "Politic"
+    },
+    {
+      "id": 5,
+      "label": "Social"
+    },
+    {
+      "id": 6,
+      "label": "Hobby"
+    },
+    {
+      "id": 7,
+      "label": "Work"
     }
 ]
   

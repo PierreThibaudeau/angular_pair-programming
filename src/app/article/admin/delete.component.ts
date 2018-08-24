@@ -17,8 +17,10 @@ export class ArticleDeleteComponent {
     ) {}
 
     deleteArticle(id) {
-        this.articlesService.remove(id).subscribe((deletedArticle) => {
-            this.router.navigate(['/articles']);
-        });
+        if (confirm('Voulez-vous vraiment supprimer cet article ?')) {
+                this.articlesService.remove(id).subscribe((deletedArticle) => {
+                this.router.navigate(['/articles']);
+            });
+        }
     }
 }

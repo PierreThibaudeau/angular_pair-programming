@@ -29,8 +29,7 @@ function loadDatas(type) {
 app.use(express.bodyParser());
 app.use(cors);
 
-app.post(context+'/login', (req, res) =>
-{
+app.post(context+'/login', (req, res) => {
   let { username, password } = req.body
 
   if(username === user[0].username && password === user[0].password) {
